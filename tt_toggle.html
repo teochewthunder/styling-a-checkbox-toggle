@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toggle</title>
+
+		<style>
+			.toggle_wrapper:after
+			{
+				display: block;
+				content: "";
+				clear: both;
+			}
+
+			.toggle_wrapper label
+			{
+				font-size: 16px;
+				margin-left: 1em;
+			}
+
+			.toggle_wrapper input
+			{
+				display: none;
+			}
+
+			.toggle
+			{
+				width: 30px;
+				height: 15px;
+				border-radius: 7px;
+				border: 1px solid #000000;
+				float: left;
+			}
+
+			.toggle.off
+			{
+				background-color: #FFFFFF;
+			}
+
+			.toggle.on
+			{
+				background-color: #777777;
+			}
+
+			.toggle:before
+			{
+				display: block;
+				content: "";
+				width: 50%;
+				height: 100%;
+				border-radius: 50%;
+				background-color: #444444;
+				cursor: pointer;
+				-webkit-transition: all 0.2s;
+				transition: all 0.2s;
+			}
+
+			.toggle.off:before
+			{
+				margin-left: 0%;
+			}
+
+			.toggle.on:before
+			{
+				margin-left: 50%;
+			}
+		</style>
+
+		<script>
+			function toggle(tg, id)
+			{
+				//var tg = document.getElementById(id + "_toggle");
+
+				if (tg.className == "toggle on")
+				{
+					tg.className = "toggle off";
+					document.getElementById(id).checked = false;
+				}
+				else
+				{
+					tg.className = "toggle on";
+					document.getElementById(id).checked = true;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="toggle_wrapper">
+			<div class="toggle on" onclick="toggle(this, 'cbPrint')">
+
+			</div>
+			<label for="cbPrint">Print</label>
+			<input type="checkbox" name="cbPrint" id="cbPrint" value="print" checked>
+		</div>
+
+		<br />
+
+		<div class="toggle_wrapper">
+			<div class="toggle off" onclick="toggle(this, 'cbEmail')">
+
+			</div>
+			<label for="cbEmail">Email</label>
+			<input type="checkbox" name="cbEmail" id="cbEmail" value="email">
+		</div>
+	</body>
+</html>
