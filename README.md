@@ -7,4 +7,4 @@ To render the toggle as follows - a rounded rectangular div (the background) in 
 Also, to hide the actual checkboxes.
 
 **JavaScript**
-To set the CSS class of the above between *on* and *off*. And check/uncheck the actual checkboxes.
+To set the CSS class of the above between `on` and `off`. And check/uncheck the actual checkboxes.
